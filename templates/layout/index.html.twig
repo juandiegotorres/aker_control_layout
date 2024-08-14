@@ -1,0 +1,63 @@
+{% extends 'base.html.twig' %}
+
+{% set titulo = 'Titulo de prueba' %}
+{% set subtitulo = 'Lorem ipsum dolor sit amet consectetur adipiscing elit arcu facilisis ut vulputate senectus posuere neque leo quisque luctus gravida' %}
+{% set subcontrol_buttons = [
+	{
+		type: 'dropdown',
+		label: 'Opciones',
+		options: ['Opcion 1', 'Opcion 2', 'Opcion 3', 'Opcion 4']
+	},
+	{
+		type: 'button',
+		label: 'Verificador',
+		icon: 'img/icons/categoria.svg'
+	},
+	{
+		type: 'button',
+		label: 'Referencias',
+		icon: 'img/icons/referencia.svg'
+	},
+	{
+		type: 'button',
+		label: 'Distancia'
+	},
+	{
+		type: 'button',
+		label: 'Filtro',
+		icon: 'img/icons/filtro.svg'
+	},
+	{
+		type: 'button',
+		label: 'djl',
+		icon: 'img/icons/importar.svg'
+	}
+] %}
+
+{% set toolbar_buttons = [
+	{
+		label: 'Label 1',
+		icon: 'img/icons/categoria.svg',
+		class: 'active'
+	},
+	{
+		label: 'Label 1',
+		icon: 'img/icons/categoria.svg',
+		class: '',
+		disabled: true
+	},
+	{
+		label: 'Label 1',
+		icon: 'img/icons/categoria.svg'
+	},
+	{
+		label: 'Label 1',
+		icon: 'img/icons/categoria.svg'
+	}
+] %}
+
+{% block content %}
+	<div class="tabla p-10">
+		<h1>Contenido</h1>
+	</div>
+{% endblock %}

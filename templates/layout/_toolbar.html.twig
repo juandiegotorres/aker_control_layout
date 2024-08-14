@@ -1,0 +1,30 @@
+{% import 'macros/buttons.html.twig' as buttons %}
+
+<div class="toolbar">
+    <div class="title-container">
+        <div class="flex flex-col">
+            <span class="text-ak-red-500 font-bold text-xl">{{ titulo|default('Flota') }}</span>
+            <span class="text-ak-gray-300 font-medium text-xs">{{ subtitulo|default('Info extendida sobre la seccion') }}</span>
+        </div>
+        <a class="flex gap-1 items-center cursor-pointer">
+            <img src="{{ asset('img/icons/chevron_left.svg') }}" alt="Volver" class="h-2">
+            <span class="underline text-xs">Volver</span>
+        </a>
+    </div>
+    <div class="flex">
+        <div class="subcontrols-toolbar">
+            {% for button in subcontrol_buttons %}
+                {% if button.type == 'dropdown' %}
+                    {{ buttons.dropdown_button(button.label, button.options) }}
+                {% else %}
+                    {{ buttons.button(button.label, button.icon|default(null), button.class|default('')) }}
+                {% endif %}
+            {% endfor %}
+        </div>
+        <div class="controls-toolbar">
+            {% for button in toolbar_buttons %}
+                {{ buttons.button_rounded(button.label, button.icon, button.class|default(''), button.disabled|default(false)) }}
+            {% endfor %}
+        </div>
+    </div>
+</div>

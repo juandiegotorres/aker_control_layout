@@ -1,0 +1,28 @@
+<header class="header-ak flex flex-row justify-between">
+	<a href=""><img src="{{ asset('img/aker_logo.svg') }}" alt="Aker logo"></a>
+	<div class="search-bar-container">
+		<input type="text" class="search-bar-input" placeholder="Buscar">
+		<button class="search-icon">
+			<img src="{{ asset('img/icons/buscar.svg') }}" alt="Search" class="icon">
+		</button>
+	</div>
+	<div class="header-controls">
+		<div class="flex header-profile-container">
+			<div class="header-profile-icons flex">
+				<button>
+					<img src="{{ asset('img/icons/campana_con_notificacion.svg') }}" alt="Notifications" class="icon">
+				</button>
+				<a class="flex items-center">
+					<img src="{{ asset('img/icons/perfil.svg') }}" alt="Perfil" class="icon">
+				</a>
+			</div>
+			<div class="flex flex-col">
+				<span class="text-xs text-ak-gray-700 font-medium">{{ nombre_usuario|default('Nombre') }}</span>
+				<span class="text-xs text-ak-gray-600">{{ nombre_empresa|default('Nombre empresa') }}</span>
+			</div>
+		</div>
+		<a class="cursor-pointer">
+			<img src="{{ asset('img/icons/logout.svg') }}" alt="Logout" class="icon">
+		</a>
+	</div>
+</header>

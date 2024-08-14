@@ -1,0 +1,39 @@
+{% macro dropdown_button(label, options) %}
+    <div class="inline-flex ak-dropdown">
+        <button type="button" class="btn-dropdown" aria-haspopup="menu" aria-expanded="false" aria-label="Dropdown">
+            {{ label }}
+        </button>
+        <div class="relative inline-flex">
+            <button type="button" class="btn-icon-dropdown">
+                <img src="{{ asset('img/icons/chevron_down.svg') }}" class="w-4 h-4" alt="Referencias">
+            </button>
+            <div class="dropdown-content hidden" role="menu" aria-orientation="vertical"
+                 aria-labelledby="hs-split-dropright">
+                {% for option in options %}
+                    <a class="flex items-center gap-x-3.5 py-2 px-3 rounded-lg text-sm text-gray-800 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 dark:text-neutral-400"
+                       href="#">
+                        {{ option }}
+                    </a>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+{% endmacro %}
+
+{% macro button(label, icon = null, class = '', disabled = false) %}
+    <button class="btn-ak-primary {{ class }}">
+        {% if icon %}
+            <img src="{{ asset(icon) }}" class="w-4 h-4" alt="{{ label }}">
+        {% endif %}
+        {{ label }}
+    </button>
+{% endmacro %}
+
+{% macro button_rounded(label, icon, class ='', disabled = false) %}
+    <button class="btn-icon-rounded {{ class }}" {{ disabled ? 'disabled' : '' }}>
+        <span class="icon-rounded-container">
+            <img src="{{ asset(icon) }}" class="btn-icon-rounded__icon" alt="{{ icon }}">
+        </span>
+        <span class="btn-label">{{ label }}</span>
+    </button>
+{% endmacro %}

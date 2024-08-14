@@ -1,0 +1,38 @@
+<aside class="left-bar">
+	<a class="left-bar-item {{ app.request.pathinfo == '/' ? 'active' }}">
+		<img src="{{asset('img/icons/home.svg')}}" class="left-bar-icon" alt="Home">
+		<span class="text-xs text-ak-gray-600">Home</span>
+	</a>
+	<a class="left-bar-item {{ app.request.pathinfo == '/ruta' ? 'active' }} disabled">
+		<img src="{{asset('img/icons/mapa.svg')}}" class="left-bar-icon" alt="Mapas">
+		<span class="text-xs text-ak-gray-600">Mapas</span>
+	</a>
+	<a class="left-bar-item {{ app.request.pathinfo == '/ruta' ? 'active' }}">
+		<img src="{{asset('img/icons/mantenimiento.svg')}}" class="left-bar-icon" alt="Mantenimiento">
+		<span class="text-xs text-ak-gray-600">Mantenimiento</span>
+	</a>
+	<a class="left-bar-item {{ app.request.pathinfo == '/ruta' ? 'active' }}">
+		<img src="{{asset('img/icons/reportes.svg')}}" class="left-bar-icon" alt="Informes">
+		<span class="text-xs text-ak-gray-600">Informes</span>
+	</a>
+	<a class="left-bar-item {{ app.request.pathinfo == '/ruta' ? 'active' }}">
+		<img src="{{asset('img/icons/navegacion.svg')}}" class="left-bar-icon" alt="Referencias">
+		<span class="text-xs text-ak-gray-600">Referencias</span>
+	</a>
+	<a class="left-bar-item {{ app.request.pathinfo == '/ruta' ? 'active' }}">
+		<img src="{{asset('img/icons/combustible.svg')}}" class="left-bar-icon" alt="Combustible">
+		<span class="text-xs text-ak-gray-600">Combustible</span>
+	</a>
+	<a class="left-bar-item {{ app.request.pathinfo == '/ruta' ? 'active' }}">
+		<img src="{{asset('img/icons/advertencia.svg')}}" class="left-bar-icon" alt="Eventos">
+		<span class="text-xs text-ak-gray-600">Eventos</span>
+	</a>
+	<a class="left-bar-item {{ app.request.pathinfo == '/ruta' ? 'active' }}">
+		<img src="{{asset('img/icons/monitor.svg')}}" class="left-bar-icon" alt="Monitor">
+		<span class="text-xs text-ak-gray-600">Monitor</span>
+	</a>
+	<a class="left-bar-item {{ app.request.pathinfo == '/ruta' ? 'active' }}">
+		<img src="{{asset('img/icons/flota.svg')}}" class="left-bar-icon" alt="Flota">
+		<span class="text-xs text-ak-gray-600">Flota</span>
+	</a>
+</aside>
