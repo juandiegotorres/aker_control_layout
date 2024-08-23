@@ -23,7 +23,7 @@
             } only %}
 		{% endblock %}
 
-		<div class="flex">
+		<div class="main-container">
 			{% include 'layout/_leftbar.html.twig' %}
 
 			<div class="flex flex-col w-full">
@@ -33,7 +33,7 @@
 					toolbar_buttons: toolbar_buttons|default([]),
                     subcontrol_buttons: subcontrol_buttons|default([])
                 } only %}
-				<div class="content">
+				<div class="content h-full">
 					{% block content %}
                     {% endblock %}
 				</div>
@@ -42,8 +42,8 @@
 
 		<script>
 
-			//JAVASCRIPT PARA ABRIR LOS DROPDOWNS
-			window.onload = () => {
+		//JAVASCRIPT PARA ABRIR LOS DROPDOWNS
+		document.addEventListener('DOMContentLoaded', () => {
 				let dropdowns = document.querySelectorAll('.ak-dropdown');
 
 				dropdowns.forEach(dropdown => {
@@ -70,7 +70,9 @@
 					});
 					document.removeEventListener('click', closeDropdown);
 				}
-			}
+		});
 		</script>
+		{% block js %}
+		{% endblock %}
 	</body>
 </html>

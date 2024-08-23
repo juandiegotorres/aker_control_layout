@@ -1,0 +1,47 @@
+{% macro card_vehiculo(nombre_vehiculo, info_extra, patente, combustible, temperatura, nombre_chofer, velocidad) %}
+<div class="card-car">
+
+                <div class="card-car__title">
+                    <div class="flex items-center px-1 gap-2">
+                        <img src="{{ asset('img/icons/camioneta.svg') }}" alt="Camioneta" class="w-4">
+                        <div class="flex flex-col">
+                            <span class="text-white text-xs font-semibold">{{ nombre_vehiculo }}</span>
+                            <span class="text-white text-xs font-light">{{ info_extra }} + {{ patente }}</span>
+                        </div>
+                    </div>
+                    <div class="flex gap-3 pr-1">
+                        <button class="cursor-pointer"><img src="{{ asset('img/icons/expandir.svg') }}" alt="Expandir" class="w-4"></button>
+                        <button class="cursor-pointer"><img src="{{ asset('img/icons/opciones.svg') }}" alt="Opciones" class="w-1"></button>
+                    </div>
+                </div>
+                <div class="card-car__body">
+                    <div class="flex flex-col h-8 gap-1">
+                        <div class="flex justify-between gap-2 p-1">
+                            <div class="flex items-center">
+                                <img src="{{ asset('img/icons/testigos/combustible.svg') }}" alt="Expandir" class="w-4 h-4">
+                                <span class="text-ak-gray-600 text-xs">{{ combustible }}l.</span>
+                            </div>
+                            <div class="flex items-center">
+                                <img src="{{ asset('img/icons/testigos/temperatura.svg') }}" alt="Expandir" class="w-4 h-4">
+                                <span class="text-red-600 text-xs">{{ temperatura }}º</span>
+                            </div>
+                            <img src="{{ asset('img/icons/testigos/bateria.svg') }}" alt="Expandir" class="w-4 h-4">
+                            <img src="{{ asset('img/icons/testigos/embrague.svg') }}" alt="Expandir" class="w-4 h-4">
+                            <img src="{{ asset('img/icons/testigos/freno.svg') }}" alt="Expandir" class="w-4 h-4">
+                            <img src="{{ asset('img/icons/testigos/antena.svg') }}" alt="Expandir" class="w-4 h-4">
+                            <img src="{{ asset('img/icons/testigos/senal.svg') }}" alt="Expandir" class="w-4 h-4">
+                        </div>
+                        <div class="flex gap-2 items-center pb-1 px-1">
+                            <img src="{{ asset('img/icons/chofer.svg') }}" alt="Chofer" class="w-3 h-4">
+                            <span class="font-light text-xs text-ak-gray-700">{{ nombre_chofer }}</span>
+                        </div>
+                    </div>
+                    <div class="flex flex-col items-center pb-1 pr-1 justify-end">
+                        <img src="{{ asset('img/icons/direccion-arriba.svg') }}" alt="Expandir" class="w-6 h-6">
+                        <div class="flex flex-col text-center">
+                            <span class="font-light text-velocidad text-ak-gray-700">{{ velocidad }} <br> KmH</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+{% endmacro %}

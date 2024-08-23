@@ -1,0 +1,92 @@
+{% extends 'base.html.twig' %}
+
+{% set titulo = 'Titulo de prueba' %}
+{% set subtitulo = 'Lorem ipsum dolor sit amet' %}
+{% set subcontrol_buttons = [
+	{
+		type: 'dropdown',
+		label: 'Opciones',
+		options: ['Opcion 1', 'Opcion 2', 'Opcion 3', 'Opcion 4']
+	},
+	{
+		type: 'button',
+		label: 'Verificador',
+		icon: 'img/icons/categoria.svg'
+	},
+	{
+		type: 'button',
+		label: 'Referencias',
+		icon: 'img/icons/referencia.svg'
+	},
+	{
+		type: 'button',
+		label: 'Distancia'
+	},
+	{
+		type: 'button',
+		label: 'Filtro',
+		icon: 'img/icons/filtro.svg'
+	},
+	{
+		type: 'button',
+		label: 'djl',
+		icon: 'img/icons/importar.svg'
+	}
+] %}
+
+{% set toolbar_buttons = [
+	{
+		label: 'Label 1',
+		icon: 'img/icons/categoria.svg',
+		class: 'active'
+	},
+	{
+		label: 'Label 1',
+		icon: 'img/icons/categoria.svg',
+		class: '',
+		disabled: true
+	},
+	{
+		label: 'Label 1',
+		icon: 'img/icons/categoria.svg'
+	},
+	{
+		label: 'Label 1',
+		icon: 'img/icons/categoria.svg'
+	}
+] %}
+
+{% block scripts %}
+	<script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+	<link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+{% endblock %}
+
+{% block content %}
+	{% from 'macros/card-vehiculo.html.twig' import card_vehiculo %}
+	<div class="flex flex-row h-full gap-2 py-2 pr-2">
+		<div class="container-cards-car">
+			{{ card_vehiculo('Camioneta 1', 'Ford Ranger', 'ABC123', 45, 80, 'Juan Pérez', 60) }}
+			{{ card_vehiculo('Camión 2', 'Volvo FH', 'XYZ789', 150, 75, 'María García', 55) }}
+			{{ card_vehiculo('Furgoneta 3', 'Mercedes Sprinter', 'DEF456', 60, 70, 'Carlos López', 65) }}
+			{{ card_vehiculo('Pickup 4', 'Toyota Hilux', 'GHI789', 55, 78, 'Ana Martínez', 58) }}
+			{{ card_vehiculo('Camioneta 5', 'Chevrolet Silverado', 'JKL012', 70, 82, 'Pedro Rodríguez', 62) }}
+			{{ card_vehiculo('Furgón 6', 'Renault Master', 'MNO345', 65, 73, 'Laura Fernández', 57) }}
+			{{ card_vehiculo('SUV 7', 'Nissan X-Trail', 'PQR678', 50, 76, 'Diego Sánchez', 63) }}
+			{{ card_vehiculo('Camión 8', 'Scania R450', 'STU901', 200, 72, 'Elena Gómez', 52) }}
+			{{ card_vehiculo('Van 9', 'Volkswagen Crafter', 'VWX234', 75, 79, 'Roberto Díaz', 59) }}
+		</div>
+		<div class="w-full h-full border rounded-lg border-ak-gray-300" id="map">
+		</div>
+	</div>
+    {% endblock %}
+
+    {% block js %}
+    {{ parent() }}
+    <script>
+        var map = L.map('map').setView([-32.8895, -68.8458], 13);
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+        }).addTo(map);
+    </script>
+{% endblock %}
+

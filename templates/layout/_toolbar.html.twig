@@ -4,7 +4,7 @@
     <div class="title-container">
         <div class="flex flex-col">
             <span class="text-ak-red-500 font-bold text-xl">{{ titulo|default('Flota') }}</span>
-            <span class="text-ak-gray-300 font-medium text-xs">{{ subtitulo|default('Info extendida sobre la seccion') }}</span>
+            <span class="text-ak-gray-300 font-medium text-xs max-w-80">{{ subtitulo|default('Info extendida sobre la seccion') }}</span>
         </div>
         <a class="flex gap-1 items-center cursor-pointer">
             <img src="{{ asset('img/icons/chevron_left.svg') }}" alt="Volver" class="h-2">
